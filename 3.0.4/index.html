@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>PhotoSwipe</title>
+	<meta name="author" content="Ste Brennan - Code Computerlove - http://www.codecomputerlove.com/" />
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<link href="styles.css" type="text/css" rel="stylesheet" />
+	
+	<link href="photoswipe.css" type="text/css" rel="stylesheet" />
+	<script type="text/javascript" src="lib/klass.min.js"></script>
+	<script type="text/javascript" src="code.photoswipe-3.0.4.min.js"></script>
+	<script type="text/javascript" src="http://www.teainc.me/grams/bosom.js"></script>
+    
+	<script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript" src="cordova-1.6.1.js"></script>
+    
+	<script type="text/javascript">
+
+		(function(window, PhotoSwipe){
+		
+			document.addEventListener('DOMContentLoaded', function(){
+			
+				var
+					options = {},
+					instance = PhotoSwipe.attach( window.document.querySelectorAll('#Gallery a'), options );
+			
+			}, false);
+			
+			
+		}(window, window.Code.PhotoSwipe));
+		
+	</script>
+	
+    <script type="text/javascript" charset="utf-8">
+            
+            // Wait for Cordova to load
+            // 
+            document.addEventListener("deviceready", onDeviceReady, false);
+            
+            // Cordova is loaded and it is now safe to make calls Cordova methods
+            //
+            function onDeviceReady() {
+                checkConnection();
+            }
+            
+            function checkConnection() {
+                var networkState = navigator.network.connection.type;
+                
+                var states = {};
+                
+                if (networkState == "unknown" ){
+                window.location = "offline.html";
+                }
+            }
+            
+     </script>
+    
+    <script>
+	
+	$(document).ready(function() {
+					own_get_nextpics();
+					$(".img").load(function() {
+					$(this).animate({opacity: 1}, 2500);
+				});
+	});
+	
+		
+	</script>
+    
+    
+</head>
+<body>
+
+<div id="Header">
+<h1>bosomgram</h1>
+</div>
+
+<div id="MainContent">
+
+	<div class="page-content">
+	</div>
+	
+	<ul id="Gallery" class="gallery">	
+		<li></li>
+        <li></li>	
+        <li></li>
+        <li></li>
+        <li></li>	
+        <li></li>
+        <li></li>
+        <li></li>	
+        <li></li>
+	</ul>
+	
+</div>	
+
+	
+<div id="Footer">
+	
+    <div class="nav">
+    	<a href="index.html"><img src="reload.png" width="40px" height="40px"></a>
+  </div>
+    
+    <p><small>&copy; 2012 tea inc. UG</small></p>
+    
+<!--	<div id="SocialLinks">
+		<a href="http://blog.codecomputerlove.com/"><img src="images/blogicon.png" width="32" height="32" alt="Blog" /></a>
+		<a href="http://www.twitter.com/computerlovers"><img src="images/twittericon.png" width="32" height="32" alt="Twitter" /></a>
+		<a href="http://www.facebook.com/CodeComputerlove"><img src="images/facebookicon.png" width="32" height="32" alt="Facebook" /></a>
+		<a href="http://www.flickr.com/photos/codecomputerlove"><img src="images/flickricon.png" width="32" height="32" alt="Flickr" /></a>
+	</div>-->
+	
+</div>
+
+</body>
+</html>
